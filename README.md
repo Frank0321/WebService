@@ -1,5 +1,6 @@
 # WebService
 Web Service 範例
+- java 17
 
 ## Server 端
 ### 使用 依賴
@@ -49,6 +50,8 @@ Web Service 範例
 ```
 - 在專案目錄底下執行 : `mvn compile `
 
+## resource
+- [spring doc](https://spring.io/guides/gs/producing-web-service)
 
 
 

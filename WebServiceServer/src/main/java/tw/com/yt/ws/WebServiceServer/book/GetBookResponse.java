@@ -2,11 +2,11 @@
 // 此檔案是由 Eclipse Implementation of JAXB, v3.0.0 所產生 
 // 請參閱 https://eclipse-ee4j.github.io/jaxb-ri 
 // 一旦重新編譯來源綱要, 對此檔案所做的任何修改都將會遺失. 
-// 產生時間: 2025.05.03 於 10:37:25 PM CST 
+// 產生時間: 2025.05.03 於 11:52:32 PM CST 
 //
 
 
-package webserviceserver.ws.yt.com.tw.book;
+package tw.com.yt.ws.webserviceserver.book;
 
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -25,7 +25,7 @@ import jakarta.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="book" type="{http://tw.com.yt.ws.WebServiceServer/book}book"/&gt;
+ *         &lt;element name="book" type="{http://WebServiceServer.ws.yt.com.tw/book}book"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
