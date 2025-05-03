@@ -6,7 +6,7 @@
 //
 
 
-package tw.com.yt.ws.webserviceserver.book;
+package tw.com.yt.ws.WebServiceServer.book;
 
 import jakarta.xml.bind.annotation.XmlRegistry;
 

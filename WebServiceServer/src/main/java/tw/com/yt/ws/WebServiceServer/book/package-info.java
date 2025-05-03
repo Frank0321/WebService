@@ -6,4 +6,4 @@
 //
 
 @jakarta.xml.bind.annotation.XmlSchema(namespace = "http://WebServiceServer.ws.yt.com.tw/book", elementFormDefault = jakarta.xml.bind.annotation.XmlNsForm.QUALIFIED)
-package tw.com.yt.ws.webserviceserver.book;
+package tw.com.yt.ws.WebServiceServer.book;
