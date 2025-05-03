@@ -7,15 +7,18 @@
  *   1) First Release.
  */
 
-package tw.com.yt.ws.WebServiceServer;
+package tw.com.yt.ws.WebServiceServer.init;
 
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.stereotype.Service;
+
 import jakarta.annotation.PostConstruct;
 import tw.com.yt.ws.WebServiceServer.book.Book;
 
-public class InitDataService {
+@Service
+public class InitDataBookService {
 	
 	private static final Map<String, Book> books = new HashMap<>();
 	

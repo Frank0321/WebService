@@ -52,7 +52,7 @@ Web Service 範例
 
 ## resource
 - [spring doc](https://spring.io/guides/gs/producing-web-service)
-
+- [昕力資訊 sample code](https://www.tpisoftware.com/tpu/articleDetails/1968)
 
 
 ## client 端
