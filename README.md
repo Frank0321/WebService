@@ -3,6 +3,7 @@ Web Service 範例
 - java 17
 
 ## Server 端
+- 啟動 port 8090
 ### 使用 依賴
 ```
 <dependency>
@@ -49,6 +50,37 @@ Web Service 範例
 </xs:schema>
 ```
 - 在專案目錄底下執行 : `mvn compile `
+
+### request 和 response
+- req 
+```
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:gs="http://WebServiceServer.ws.yt.com.tw/book">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <gs:getBookRequest>
+            <gs:isbn>9789861856216</gs:isbn>
+        </gs:getBookRequest>
+    </soapenv:Body>
+</soapenv:Envelope>
+``
+- res
+```
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+    <SOAP-ENV:Header/>
+    <SOAP-ENV:Body>
+        <ns2:getBookResponse xmlns:ns2="http://WebServiceServer.ws.yt.com.tw/book">
+            <ns2:book>
+                <ns2:isbn>9789861856216</ns2:isbn>
+                <ns2:name>冰與火之歌：權力遊戲</ns2:name>
+                <ns2:author>喬治馬汀</ns2:author>
+                <ns2:publishing>2011</ns2:publishing>
+                <ns2:edition>1</ns2:edition>
+            </ns2:book>
+        </ns2:getBookResponse>
+    </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+```
 
 ## resource
 - [spring doc](https://spring.io/guides/gs/producing-web-service)
