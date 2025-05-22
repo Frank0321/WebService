@@ -55,33 +55,39 @@
 		</dependency>
 	</dependencies>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>jaxb2-maven-plugin</artifactId>
-				<version>3.1.0</version>
-				<executions>
-					<execution>
-						<id>xjc</id>
-						<goals>
-							<goal>xjc</goal>
-						</goals>
-					</execution>
-				</executions>
-				<configuration>
-					<sources>
-						<source>src/main/resources/book.xsd</source>
-					</sources>
-					<outputDirectory>src/main/java</outputDirectory>
-					<clearOutputDir>false</clearOutputDir>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>jaxb2-maven-plugin</artifactId>
+                <version>3.1.0</version>
+                <executions>
+                    <execution>
+                        <id>xjc</id>
+                        <goals>
+                            <goal>xjc</goal>
+                        </goals>
+                        <configuration>
+                            <bindingDirectory>
+                                ${project.basedir}/src/main/resources</bindingDirectory>
+                            <packageName>tw.com.yt.ws.WebServiceClient.book</packageName>
+                            <bindingFiles>
+                                <bindingFile>book-bindings.xjb</bindingFile>
+                            </bindingFiles>
+                            <sources>
+                                <source>src/main/resources/book.xsd</source>
+                            </sources>
+                            <outputDirectory>src/main/java</outputDirectory>
+                            <clearOutputDir>false</clearOutputDir>
+                        </configuration>
+                    </execution>
+                </executions>
 
+            </plugin>
+        </plugins>
+    </build>
 </project>

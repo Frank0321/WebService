@@ -5,21 +5,21 @@
 此檔案是由 Eclipse Implementation of JAXB, v3.0.0 所產生 
 請參閱 https://eclipse-ee4j.github.io/jaxb-ri 
 一旦重新編譯來源綱要, 對此檔案所做的任何修改都將會遺失. 
-產生時間: 2025.05.03 於 10:26:20 PM CST 
+產生時間: 2025.05.22 於 03:05:17 PM CST 
 
   -->
-  <bindings scd="x-schema::tns" xmlns:tns="http://www.example.com/book">
+  <bindings scd="x-schema::tns" xmlns:tns="http://WebServiceServer.ws.yt.com.tw/book">
     <schemaBindings map="false">
-      <package name="com.example.book"/>
+      <package name="tw.com.yt.ws.WebServiceClient.book"/>
     </schemaBindings>
     <bindings scd="tns:getBookRequest">
-      <class ref="com.example.book.GetBookRequest"/>
+      <class ref="tw.com.yt.ws.WebServiceClient.book.GetBookRequest"/>
     </bindings>
     <bindings scd="tns:getBookResponse">
-      <class ref="com.example.book.GetBookResponse"/>
+      <class ref="tw.com.yt.ws.WebServiceClient.book.GetBookResponse"/>
     </bindings>
     <bindings scd="~tns:book">
-      <class ref="com.example.book.Book"/>
+      <class ref="tw.com.yt.ws.WebServiceClient.book.Book"/>
     </bindings>
   </bindings>
 </bindings>
