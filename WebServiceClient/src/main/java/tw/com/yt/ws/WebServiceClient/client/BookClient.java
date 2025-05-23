@@ -1,4 +1,4 @@
-package tw.com.yt.ws.WebServiceClient.service;
+package tw.com.yt.ws.WebServiceClient.client;
 
 
 import java.net.ConnectException;

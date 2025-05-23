@@ -8,7 +8,7 @@ import org.springframework.ws.transport.WebServiceMessageSender;
 import org.springframework.ws.transport.http.HttpComponentsMessageSender;
 
 import tw.com.yt.ws.WebServiceClient.log.LoggingInterceptor;
-import tw.com.yt.ws.WebServiceClient.service.BookClient;
+import tw.com.yt.ws.WebServiceClient.client.BookClient;
 
 @Configuration
 public class WebClientConfig {

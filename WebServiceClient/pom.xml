@@ -66,6 +66,12 @@
             <artifactId>httpclient</artifactId>
             <version>4.5.13</version> <!-- 可以根據需要使用其他版本 -->
         </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.30</version> <!-- 可依照最新版本調整 -->
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
     <build>

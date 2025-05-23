@@ -8,7 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import tw.com.yt.ws.WebServiceClient.book.Book;
 import tw.com.yt.ws.WebServiceClient.book.GetBookResponse;
-import tw.com.yt.ws.WebServiceClient.service.BookClient;
+import tw.com.yt.ws.WebServiceClient.client.BookClient;
 
 @SpringBootTest
 public class WebServiceClientApplicationTests {
