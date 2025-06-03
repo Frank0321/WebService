@@ -1,0 +1,36 @@
+/**
+ * @Description : TODO
+ * @ClassName : MsQuerySerGroupEndPoint.java
+ * @Copyright : Copyright (c) 2025 
+ * @ModifyHistory : 
+ *  v1.00, 2025/06/04, frankchang
+ *   1) First Release.
+ */
+
+package tw.com.yt.ws.WebServiceServer.endpoint;
+
+import org.springframework.ws.server.endpoint.annotation.Endpoint;
+import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
+import org.springframework.ws.server.endpoint.annotation.RequestPayload;
+import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
+
+import tw.com.yt.ws.WebServiceServer.init.initDataMsQuerySerGroupService;
+import tw.com.yt.ws.WebServiceServer.msquerysergroup.MsQuerySerGroup;
+import tw.com.yt.ws.WebServiceServer.msquerysergroup.MsQuerySerGroupResponse;
+
+@Endpoint
+public class MsQuerySerGroupEndPoint {
+
+    private static final String NAMESPACE_URI = "http://www.richbank.com.tw/";
+	
+	@PayloadRoot(namespace = NAMESPACE_URI, localPart = "MsQuerySerGroup")
+    public @ResponsePayload MsQuerySerGroupResponse getGroupResponse(@RequestPayload MsQuerySerGroup request)
+            throws InterruptedException {
+    	
+		initDataMsQuerySerGroupService service = new initDataMsQuerySerGroupService();
+		MsQuerySerGroupResponse response = service.findOne(request.getBranch());
+        
+        return response;
+    }
+	
+}

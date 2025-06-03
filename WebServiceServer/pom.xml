@@ -75,7 +75,7 @@
 				</executions>
 				<configuration>
 					<sources>
-						<source>src/main/resources/book.xsd</source>
+						<source>src/main/resources/MsQuerySerGroup.xsd</source>
 					</sources>
 					<outputDirectory>src/main/java</outputDirectory>
 					<clearOutputDir>false</clearOutputDir>

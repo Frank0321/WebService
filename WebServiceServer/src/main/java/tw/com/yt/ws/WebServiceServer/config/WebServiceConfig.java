@@ -25,13 +25,15 @@ import org.springframework.xml.xsd.XsdSchema;
 public class WebServiceConfig {
 	
     private static final String NAMESPACE_URI = "http://WebServiceServer.ws.yt.com.tw/book";
+    
+    private static final String NAMESPACE_URI2 = "http://www.richbank.com.tw/";
 
     @Bean
     public ServletRegistrationBean messageDispatcherServlet(ApplicationContext applicationContext) {
         MessageDispatcherServlet servlet = new MessageDispatcherServlet();
         servlet.setApplicationContext(applicationContext);
         servlet.setTransformWsdlLocations(true);
-        return new ServletRegistrationBean(servlet, "/bookService/*");
+        return new ServletRegistrationBean(servlet, "/*");
     }
 		
     @Bean
@@ -46,6 +48,21 @@ public class WebServiceConfig {
         wsdl11Definition.setLocationUri("/bookService");
         wsdl11Definition.setTargetNamespace(NAMESPACE_URI);
         wsdl11Definition.setSchema(bookSchema);
+        return wsdl11Definition;
+    }
+    
+    @Bean
+    public XsdSchema msGroupSchema() {
+    	return new SimpleXsdSchema(new ClassPathResource("MsQuerySerGroup.xsd"));
+    }
+    
+    @Bean(name = "msQuerySerGroup")
+    public DefaultWsdl11Definition defaultWsdl11DefinitionMsQuerySerGroup(XsdSchema msGroupSchema) {
+        DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
+        wsdl11Definition.setPortTypeName("msQuerySerGroup");
+        wsdl11Definition.setLocationUri("/msQuerySerGroup");
+        wsdl11Definition.setTargetNamespace(NAMESPACE_URI2);
+        wsdl11Definition.setSchema(msGroupSchema);
         return wsdl11Definition;
     }
 	
