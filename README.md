@@ -52,7 +52,7 @@ Web Service 範例
 - 在專案目錄底下執行 : `mvn compile `
 
 ### request 和 response
-- req 
+- book req 
 ```
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
                   xmlns:gs="http://WebServiceServer.ws.yt.com.tw/book">
@@ -64,7 +64,7 @@ Web Service 範例
     </soapenv:Body>
 </soapenv:Envelope>
 ```
-- res
+- book res
 ```
 <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
     <SOAP-ENV:Header/>
@@ -81,6 +81,50 @@ Web Service 範例
     </SOAP-ENV:Body>
 </SOAP-ENV:Envelope>
 ```
+
+- msQuerySerGroup rq
+```
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<soap:Body>
+		<MsQuerySerGroup xmlns="http://www.richbank.com.tw/">
+			<TxSeq>00005904</TxSeq>
+			<WSID>99990001</WSID>
+			<Branch>A</Branch>
+		</MsQuerySerGroup>
+	</soap:Body>
+</soap:Envelope>
+```
+- msQuerySerGroup rs
+```
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+    <SOAP-ENV:Header/>
+    <SOAP-ENV:Body>
+        <ns2:MsQuerySerGroupResponse xmlns:ns2="http://www.richbank.com.tw/">
+            <ns2:response>
+                <ns2:Code>200</ns2:Code>
+                <ns2:Desc>成功</ns2:Desc>
+                <ns2:DateTime>2025/06/04</ns2:DateTime>
+                <ns2:TxSeq>666</ns2:TxSeq>
+            </ns2:response>
+            <ns2:Group>
+                <ns2:Data>
+                    <ns2:Branch>123</ns2:Branch>
+                    <ns2:GroupID>A</ns2:GroupID>
+                    <ns2:Name>data1</ns2:Name>
+                    <ns2:Call_Number>1</ns2:Call_Number>
+                </ns2:Data>
+                <ns2:Data>
+                    <ns2:Branch>234</ns2:Branch>
+                    <ns2:GroupID>A</ns2:GroupID>
+                    <ns2:Name>data2</ns2:Name>
+                    <ns2:Call_Number>2</ns2:Call_Number>
+                </ns2:Data>
+            </ns2:Group>
+        </ns2:MsQuerySerGroupResponse>
+    </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+```
+
 
 ## resource
 - [spring doc](https://spring.io/guides/gs/producing-web-service)
