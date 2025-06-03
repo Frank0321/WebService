@@ -28,6 +28,13 @@ public class BookEndpoint {
     @Autowired
     private InitDataBookService bookService;
 
+    /***
+     * 
+     * 
+     * @param request
+     * @return
+     * @throws InterruptedException
+     */
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "getBookRequest")
     public @ResponsePayload GetBookResponse getBookByIsbn(@RequestPayload GetBookRequest request)
             throws InterruptedException {

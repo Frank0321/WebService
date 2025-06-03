@@ -24,28 +24,67 @@ import org.springframework.xml.xsd.XsdSchema;
 @Configuration
 public class WebServiceConfig {
 	
-    private static final String NAMESPACE_URI = "http://WebServiceServer.ws.yt.com.tw/book";
+    private static final String NAMESPACE_BOOK = "http://WebServiceServer.ws.yt.com.tw/book";
+    
+    private static final String NAMESPACE_MSQUERYSERGROUP = "http://www.richbank.com.tw/";
 
     @Bean
     public ServletRegistrationBean messageDispatcherServlet(ApplicationContext applicationContext) {
         MessageDispatcherServlet servlet = new MessageDispatcherServlet();
         servlet.setApplicationContext(applicationContext);
         servlet.setTransformWsdlLocations(true);
-        return new ServletRegistrationBean(servlet, "/bookService/*");
+        return new ServletRegistrationBean(servlet, "/*");
     }
-		
+	
+    /***
+     * book schema
+     * 
+     * @return
+     */
     @Bean
     public XsdSchema bookSchema() {
         return new SimpleXsdSchema(new ClassPathResource("book.xsd"));
     }
 
+    /***
+     * book url setting
+     * 
+     * @param bookSchema
+     * @return
+     */
     @Bean(name = "book")
     public DefaultWsdl11Definition defaultWsdl11Definition(XsdSchema bookSchema) {
         DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
         wsdl11Definition.setPortTypeName("BookPort");
         wsdl11Definition.setLocationUri("/bookService");
-        wsdl11Definition.setTargetNamespace(NAMESPACE_URI);
+        wsdl11Definition.setTargetNamespace(NAMESPACE_BOOK);
         wsdl11Definition.setSchema(bookSchema);
+        return wsdl11Definition;
+    }
+    
+    /***
+     * MsQuerySerGroup schema
+     * 
+     * @return
+     */
+    @Bean
+    public XsdSchema msQuerySerGroupSchema() {
+    	return new SimpleXsdSchema(new ClassPathResource("MsQuerySerGroup.xsd"));
+    }
+    
+    /***
+     * msQuerySerGroup url setting
+     * 
+     * @param msQuerySerGroupSchema
+     * @return
+     */
+    @Bean(name = "msQuerySerGroup")
+    public DefaultWsdl11Definition msQuerySerGroupDefaultWsdl11Definition(XsdSchema msQuerySerGroupSchema) {
+        DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
+        wsdl11Definition.setPortTypeName("msQuerySerGroup");
+        wsdl11Definition.setLocationUri("/msQuerySerGroup");
+        wsdl11Definition.setTargetNamespace(NAMESPACE_MSQUERYSERGROUP);
+        wsdl11Definition.setSchema(msQuerySerGroupSchema);
         return wsdl11Definition;
     }
 	
