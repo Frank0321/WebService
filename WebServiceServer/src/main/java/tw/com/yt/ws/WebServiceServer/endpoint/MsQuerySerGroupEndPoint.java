@@ -1,5 +1,5 @@
 /**
- * @Description : TODO
+ * @Description : MsQuerySerGroup 業務邏輯的進入點
  * @ClassName : MsQuerySerGroupEndPoint.java
  * @Copyright : Copyright (c) 2025 
  * @ModifyHistory : 
@@ -23,6 +23,13 @@ public class MsQuerySerGroupEndPoint {
 
     private static final String NAMESPACE_URI = "http://www.richbank.com.tw/";
 	
+    /***
+     * 
+     * 
+     * @param request
+     * @return
+     * @throws InterruptedException
+     */
 	@PayloadRoot(namespace = NAMESPACE_URI, localPart = "MsQuerySerGroup")
     public @ResponsePayload MsQuerySerGroupResponse getGroupResponse(@RequestPayload MsQuerySerGroup request)
             throws InterruptedException {

@@ -1,5 +1,5 @@
 /**
- * @Description : TODO
+ * @Description : init Data
  * @ClassName : initDataMsQuerySerGroupService.java
  * @Copyright : Copyright (c) 2025 
  * @ModifyHistory : 
@@ -21,6 +21,9 @@ public class initDataMsQuerySerGroupService {
 	
 	private static Group GROUP = new Group();
 	
+	/***
+	 * create data
+	 */
 	private void initData() {
 		
 		List<Data> datas = new ArrayList<>();
