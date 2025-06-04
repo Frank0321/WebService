@@ -1,5 +1,5 @@
 /**
- * @Description : TODO
+ * @Description : web Service Interceptor
  * @ClassName : WebServiceInterceptor.java
  * @Copyright : Copyright (c) 2025 
  * @ModifyHistory : 
@@ -61,6 +61,7 @@ public class WebServiceInterceptor implements ClientInterceptor {
 		
 		try (ByteArrayOutputStream out = new ByteArrayOutputStream();) {
 			
+			// request 和 response (fault) 需要使用的物件不同，需要先判斷
 			if (preString.contains("berfore")) {
 				 messageContext.getRequest().writeTo(out);
 			} else {

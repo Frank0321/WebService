@@ -1,5 +1,5 @@
 /**
- * @Description : TODO
+ * @Description : MsQuerySerGroup API 上行
  * @ClassName : MsQuerySerGroupRq.java
  * @Copyright : Copyright (c) 2025 
  * @ModifyHistory : 
@@ -9,7 +9,11 @@
 
 package tw.com.yt.ws.WebServiceClient.api;
 
-public class MsQuerySerGroupRq {
+import java.io.Serializable;
+
+public class MsQuerySerGroupRq implements Serializable{
+
+	private static final long serialVersionUID = 7210193911072662192L;
 
 	private String txSeq;
 	
@@ -58,6 +62,5 @@ public class MsQuerySerGroupRq {
 	public void setBranch(String branch) {
 		this.branch = branch;
 	}
-	
 	
 }

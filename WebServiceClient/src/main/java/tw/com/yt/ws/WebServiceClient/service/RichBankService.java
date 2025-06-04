@@ -1,5 +1,5 @@
 /**
- * @Description : TODO
+ * @Description : RichBank 業務邏輯
  * @ClassName : RichBankService.java
  * @Copyright : Copyright (c) 2025 
  * @ModifyHistory : 
@@ -30,19 +30,21 @@ public class RichBankService {
 	private RichBankServiceHelper helper;
 	
 	/**
+	 * 取得 msQuerySerGroup 資料
+	 * 
 	 * @param rq
 	 * @return
 	 */
 	public MsQuerySerGroupRes msQuerySerGroup(MsQuerySerGroupRq rq) {
 		
-		// pre msRq
+		// pre msRq (rq to msRq)
 		MsQuerySerGroup msRq = new MsQuerySerGroup();
 		msRq.setBranch(rq.getBranch());
 		
 		// send soap
 		MsQuerySerGroupResponse res = helper.send(msRq);
 		
-		// pre Res
+		// pre Res (msRes to Res)
 		MsQuerySerGroupRes serGroupRes = new MsQuerySerGroupRes();
 
 		List<MsQuerySerGroupResData> resDatas = new ArrayList<>();

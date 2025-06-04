@@ -1,5 +1,5 @@
 /**
- * @Description : TODO
+ * @Description : RichBank API 入口點
  * @ClassName : RichBankController.java
  * @Copyright : Copyright (c) 2025 
  * @ModifyHistory : 
@@ -34,6 +34,7 @@ public class RichBankController {
 		
 		LOGGER.info("start controller...");
 		
+		// 轉換成 req
 		MsQuerySerGroupRq rq = new MsQuerySerGroupRq();
 		rq.setBranch(branch);
 		

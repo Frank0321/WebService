@@ -1,5 +1,5 @@
 /**
- * @Description : TODO
+ * @Description : MsQuerySerGroup 單筆物件
  * @ClassName : MsQuerySerGroupResData.java
  * @Copyright : Copyright (c) 2025 
  * @ModifyHistory : 
@@ -10,7 +10,7 @@
 package tw.com.yt.ws.WebServiceClient.api;
 
 public class MsQuerySerGroupResData {
-	
+
 	private String branch;
 	
 	private String groupId;

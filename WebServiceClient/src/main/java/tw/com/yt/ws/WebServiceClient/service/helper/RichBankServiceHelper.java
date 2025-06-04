@@ -1,5 +1,5 @@
 /**
- * @Description : TODO
+ * @Description : 呼叫 soap 業務邏輯
  * @ClassName : RichBankServiceHelper.java
  * @Copyright : Copyright (c) 2025 
  * @ModifyHistory : 
@@ -14,7 +14,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.oxm.jaxb.Jaxb2Marshaller;
 import org.springframework.stereotype.Service;
 import org.springframework.ws.client.core.WebServiceTemplate;
-import org.springframework.ws.transport.http.HttpComponentsMessageSender;
 
 import tw.com.yt.ws.WebServiceClient.interceptor.WebServiceInterceptor;
 import tw.com.yt.ws.WebServiceClient.richbank.msquerysergroup.MsQuerySerGroup;
