@@ -1,0 +1,42 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.richbank.com.tw/MsQuerySerGroup"
+	xmlns:tns="http://www.richbank.com.tw/MsQuerySerGroup" elementFormDefault="qualified">
+	<xs:element name="MsQuerySerGroup">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="TxSeq" type="xs:string" />
+				<xs:element name="WSID" type="xs:string" />
+				<xs:element name="Branch" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="MsQuerySerGroupResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="response" type="tns:response" />
+				<xs:element name="Group" type="tns:Group" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="response">
+		<xs:sequence>
+			<xs:element name="Code" type="xs:string" />
+			<xs:element name="Desc" type="xs:string" />
+			<xs:element name="DateTime" type="xs:string" />
+			<xs:element name="TxSeq" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Group">
+		<xs:sequence>
+			<xs:element name="Data" type="tns:Data" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+		<xs:complexType name="Data">
+		<xs:sequence>
+			<xs:element name="Branch" type="xs:string" />
+			<xs:element name="GroupID" type="xs:string" />
+			<xs:element name="Name" type="xs:string" />
+			<xs:element name="Call_Number" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

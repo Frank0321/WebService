@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<bindings version="3.0" xmlns="https://jakarta.ee/xml/ns/jaxb">
+  <!--
+
+此檔案是由 Eclipse Implementation of JAXB, v3.0.0 所產生 
+請參閱 https://eclipse-ee4j.github.io/jaxb-ri 
+一旦重新編譯來源綱要, 對此檔案所做的任何修改都將會遺失. 
+產生時間: 2025.06.04 於 10:15:22 PM CST 
+
+  -->
+  <bindings scd="x-schema::tns" xmlns:tns="http://www.richbank.com.tw/MsQuerySerGroup">
+    <schemaBindings map="false">
+      <package name="tw.com.richbank.msquerysergroup"/>
+    </schemaBindings>
+    <bindings scd="tns:MsQuerySerGroup">
+      <class ref="tw.com.richbank.msquerysergroup.MsQuerySerGroup"/>
+    </bindings>
+    <bindings scd="tns:MsQuerySerGroupResponse">
+      <class ref="tw.com.richbank.msquerysergroup.MsQuerySerGroupResponse"/>
+    </bindings>
+    <bindings scd="~tns:response">
+      <class ref="tw.com.richbank.msquerysergroup.Response"/>
+    </bindings>
+    <bindings scd="~tns:Group">
+      <class ref="tw.com.richbank.msquerysergroup.Group"/>
+    </bindings>
+    <bindings scd="~tns:Data">
+      <class ref="tw.com.richbank.msquerysergroup.Data"/>
+    </bindings>
+  </bindings>
+</bindings>
+
