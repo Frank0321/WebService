@@ -12,12 +12,18 @@ package tw.com.yt.ws.WebServiceServer.init;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import tw.com.yt.ws.WebServiceServer.endpoint.MsQuerySerGroupEndPoint;
 import tw.com.yt.ws.WebServiceServer.msquerysergroup.Data;
 import tw.com.yt.ws.WebServiceServer.msquerysergroup.Group;
 import tw.com.yt.ws.WebServiceServer.msquerysergroup.MsQuerySerGroupResponse;
 import tw.com.yt.ws.WebServiceServer.msquerysergroup.Response;
 
 public class initDataMsQuerySerGroupService {
+	
+    private static final Logger LOGGER = LoggerFactory.getLogger(initDataMsQuerySerGroupService.class);
 	
 	private static Group GROUP = new Group();
 	
@@ -68,7 +74,11 @@ public class initDataMsQuerySerGroupService {
 	 */
 	public MsQuerySerGroupResponse findOne(String groupID) {
 		
+		LOGGER.info("loading data");
+		
 		initData();
+		
+		LOGGER.info("find by group : {}", groupID);
 		
 		List<Data> datas = GROUP.getData().stream()
 												.filter(d -> d.getGroupID().equals(groupID))
