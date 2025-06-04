@@ -37,7 +37,7 @@ public class RichBankServiceHelper {
 			LOGGER.info("create Jaxb2Marshaller");
 			
 			Jaxb2Marshaller marshaller = new Jaxb2Marshaller();
-			marshaller.setContextPath("tw.com.yt.ws.WebServiceClient.richbank.msquerysergroup");
+			marshaller.setContextPath(msRq.getClass().getPackageName());
 			marshaller.afterPropertiesSet();
 	        
 	        LOGGER.info("create WebServiceTemplate");
